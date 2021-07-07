@@ -5,11 +5,11 @@ pro ex_aiaxrt_dem_0920
   ; Note that this is a quick run through of the code so my region selection
   ; will probably not be optimal - using this for your own event/data do a more
   ; careful region selection of the same size area in AIA and XRT
-  ; - this caveat goes some way to explaining why the ssw and py versions of this
-  ;   are slightly different and why I also try a dem calc using the py dn values
+  ; - py and sswidl version closer (bigger diff before was deg cor applied twice!) but
+  ;   region selection might still be slightly different.
   ;
   ; 30-Jun-2021 IGH
-  ;
+  ; 07-Jul-2021 IGH - Updated with correct comparision nums from py version (no deg version)
   ; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ;
 
@@ -116,7 +116,8 @@ pro ex_aiaxrt_dem_0920
   ; What about using the numbers from python directly as the locations slighlty different in the submaps
   ; between ssw and sunpy - so when doing with your own data can just visually check your roi actually
   ; contains the thing you want....
-  dninpy=[2.16585241,  24.95020394, 457.63229199, 576.8995456,  204.86727998,  13.59922846,   3.60276666]
+  ; These should be the numbers without any deg cor, as that's in the AIA response in this version.
+  dninpy=[1.95615,      12.6546,      338.617,      284.436,      82.4047,      2.34202,   3.60276666]
   dn2dem_pos_nb, dninpy, 0.2*dninpy,tr,logt,temps,dempy,edempy,elogtpy,chisqpy,dn_regpy,/gloci
 
   ; Do some plots

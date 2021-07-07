@@ -5,8 +5,6 @@ pro ex_aiaxrtns_dem_0920
   ; Note that this is a quick run through of the code so my region selection of the AIA/XRT maps
   ; will probably not be optimal - using this for your own event/data do a more
   ; careful region selection of the same size area in AIA and XRT
-  ; - this caveat goes some way to explaining why the ssw and py versions of this
-  ;   are slightly different and why I also try a dem calc using the py dn values
   ;
   ; See ex_aiaxrt_dem_0920.pro for a more details AIA+XRT only one.
   ;
